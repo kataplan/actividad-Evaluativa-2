@@ -16,7 +16,7 @@
     <title>Encuesta</title>
 </head>
 <body>
-    <img src="img\background.jpg" alt="fondo" id="fondo">
+   
     <header>
         
         <h1>Encuesta</h1>
@@ -26,58 +26,55 @@
         <div class="box">
             <div class="text-icon">
                 <span class="material-icons">mode</span>
-                <h3>Ingresa tus Datos:</h3>
-               
+                <h3>Ingresa tus Datos:</h3>         
             </div>
            
-            <form action="">
+            <form id="formulario">
                 <ul>
                     <li>
-                        <label for="nombre">Nombre</label>
-                        <input class="text" type="text" id="nombre"> 
+                        <label for="nombre">Nombre:</label>
+                        <input required class="text" type="text" name="nombre" id="nombre" maxlength="16"> 
                     </li>
                     <li>
-                        <label for="apellido">Apellido</label>
-                        <input class="text" type="text" id="apellido">
+                        <label for="apellido">Apellido:</label>
+                        <input required="required" class="text" type="text" name="apellido" id="apellido"  maxlength="16">
                     </li>
                     <li>
-                        <label for="rut">Rut</label>
-                        <input class="text" type="text" id="rut">
+                        <label for="rut">Rut:</label>
+                        <input required="required" class="text" type="text" pattern="[0-9]{7,8}-[0-9Kk]{1}" name="rut" id="rut" maxlength="10">
                     </li>
                     <li>
-                        <label for="email">Correo Electrónico</label>
-                        <input class="text" type="email" id="email"> 
+                        <label for="email">Correo Electrónico:</label>
+                        <input required="required" class="text" type="email" name="email" id="email"> 
                     </li>
                     <li>
-                        <label for="nombre">Teléfono Móvil</label>
-                        <input class="text" type="number" id="numbre">
+                        <label for="number">Teléfono Móvil:</label>
+                        <input required="required" class="text" type="text" name="number" id="number" maxlength="8">
                     </li>
                     <li>
                         <div class="box-programas">
-                            <label for="checklist">Programas</label>
+                            <label for="checklist">Programas de Interés:</label>
                             <ul>
-                                <li><input type="checkbox" id=checklist>Python</li>
-                                <li><input type="checkbox" id=checklist>Java</li>
-                                <li><input type="checkbox" id=checklist>TypeScript</li>
-                                <li><input type="checkbox" id=checklist>PHP</li>
-                                <li><input type="checkbox" id=checklist>C#</li>
-                                <li><input type="checkbox" id=checklist>C++</li>
+                                <li><input name="programas" type="checkbox" value="Python" id=checkPython>Python</li>
+                                <li><input name="programas" type="checkbox" value="Java" id=checkJava>Java</li>
+                                <li><input name="programas" type="checkbox" value="Typescript" id=checkTypeScript>TypeScript</li>
+                                <li><input name="programas" type="checkbox" value="PHP" id=checkPHP>PHP</li>
+                                <li><input name="programas" type="checkbox" value="C#" id=checkC#>C#</li>
+                                <li><input name="programas" type="checkbox" value="C++" id=checkC++>C++</li>
                             </ul>
                         </div>
-
-                        
                     </li>
                     <li >
-                        <label class="long-label" for="rango">¿Cuál es su nivel de conocimiento en programación?</label><br>
-                        <input type="range" min="0" max="100" value="50" id="rango">
+                        <div class="long-label" for="rango">¿Cuál es su nivel de conocimiento en programación?</div><br>
+                        <input type="range" name="rango" min="0" max="100" value="50" id="rango" step="1">
                     </li>
                     <li>
-                        <label class="long-label" for="experiencia">¿Cuantos años de experiencia laboral tiene?</label><br>
-                        <input type="radio" name="experiencia" id="experiencia">1.
-                        <input type="radio" name="experiencia" id="experiencia">2.
-                        <input type="radio" name="experiencia" id="experiencia">3.
-                        <input type="radio" name="experiencia" id="experiencia">4.
-                        <input type="radio" name="experiencia" id="experiencia">5.
+                        <div class="long-label">¿Cuantos años de experiencia laboral tiene?</div>
+                        <input type="radio" required="required" name="experiencia" value="1" id="experiencia1">1.
+                        <input type="radio" name="experiencia" value="2" id="experiencia2">2.
+                        <input type="radio" name="experiencia" value="3" id="experiencia3">3.
+                        <input type="radio" name="experiencia" value="4" id="experiencia4">4.
+                        <input type="radio" name="experiencia" value="5" id="experiencia5">5.
                     </li>
                     <li>
                         <label class="long-label" for="descripcion">Una descripción breve acerca de usted</label><br>
@@ -86,14 +83,18 @@
                 
                     <li class="li-button">
                         <div>
-                            <button type="submit" class="btn">Enviar Datos</button>
-                            <button class="btn">Limpiar Datos</button>
+                            <button type="submit" class="btn" id="btnEnviar">Enviar Datos</button>
+                            <button type="reset" class="btn" id="btnLimpiar">Limpiar Datos</button>
                         </div>
                             
                         
                     </li>
                 </ul>
             </form>
+        </div>
+        <div id= mensaje class=box>
+            <h3>Hemos recibido sus datos, pronto nos
+                estaremos comunicando con usted</h3>
         </div>
     </main>
     <footer>
